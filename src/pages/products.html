@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--tailwind css link-->
+    <link href="/src/assets/css/output.css" rel="stylesheet" />
+
+    <!--font awesome icon CDN-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!--navbar-->
+    <navbar>
+      <!--mini salider navbar-->
+      <div
+        class="h-10 bg-gradient-to-r from-purple-500 to-pink-500 flex items-center overflow-hidden"
+      >
+        <div
+          class="whitespace-nowrap animate-scroll text-white text-lg font-bold"
+        >
+          <span class="mx-4">Welcome to our website!</span>
+          <span class="mx-4">Authentic Taste</span>
+          <span class="mx-4">Free Delivery</span>
+          <span class="mx-4">COD Available</span>
+          <span class="mx-4">Welcome to our website!</span>
+          <span class="mx-4">Authentic Taste</span>
+          <span class="mx-4">Free Delivery</span>
+          <span class="mx-4">COD Available</span>
+          <span class="mx-4">Welcome to our website!</span>
+          <span class="mx-4">Authentic Taste</span>
+          <span class="mx-4">Free Delivery</span>
+          <span class="mx-4">COD Available</span>
+          <span class="mx-4">Welcome to our website!</span>
+          <span class="mx-4">Authentic Taste</span>
+          <span class="mx-4">Free Delivery</span>
+          <span class="mx-4">COD Available</span>
+          <span class="mx-4">Welcome to our website!</span>
+          <span class="mx-4">Authentic Taste</span>
+          <span class="mx-4">Free Delivery</span>
+          <span class="mx-4">COD Available</span>
+        </div>
+      </div>
+
+      <!--top mini salider styles-->
+      <style>
+        @keyframes scroll {
+          0% {
+            transform: translateX(100%);
+          }
+          100% {
+            transform: translateX(-100%);
+          }
+        }
+        .animate-scroll {
+          display: inline-block;
+          animation: scroll 50s linear infinite;
+        }
+      </style>
+
+      <!-- Main Desktop Navbar -->
+      <div class="bg-white shadow-md relative z-50">
+        <div
+          class="container mx-auto flex justify-between items-center px-4 h-15 py-4 relative"
+        >
+          <!--when user click search bar hidden this div-->
+          <div
+            id="nav-items"
+            class="container mx-auto flex justify-between items-center px-4 h-15 py-4 relative"
+          >
+            <!-- Navbar Items -->
+            <div class="hidden md:flex space-x-4">
+              <a
+                href="/src/index.html"
+                class="text-gray-700 hover:text-gray-900"
+                >Home</a
+              >
+              <a
+                href="/src/pages/products.html"
+                class="text-gray-700 hover:text-gray-900"
+                >Frequently bought</a
+              >
+              <a href="#" class="text-gray-700 hover:text-gray-900">About</a>
+              <a href="#" class="text-gray-700 hover:text-gray-900">Contact</a>
+              <a href="#" class="text-gray-700 hover:text-gray-900"
+                >Track your order</a
+              >
+            </div>
+
+            <!-- Mobile Toggle Button -->
+            <div class="md:hidden">
+              <!-- Menu Toggle Button -->
+              <button id="menu-toggle" class="text-gray-700 focus:outline-none">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16m-7 6h7"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            <!-- Logo -->
+            <div
+              class="absolute left-1/2 transform -translate-x-1/2 flex items-center"
+            >
+              <img
+                src="/src/assets/img/download.png"
+                alt="Logo"
+                class="h-14 w-14 mr-2"
+              />
+            </div>
+
+            <!-- Cart and Search Icon -->
+            <div class="flex items-center text-xl space-x-4">
+              <button
+                id="search-icon"
+                class="text-gray-700 hover:text-gray-900"
+              >
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+
+              <!--shoping bag -->
+              <a href="#" class="relative text-gray-700 hover:text-gray-900">
+                <i class="fa-solid fa-bag-shopping text-xl"></i>
+
+                <!-- Shopping count badge -->
+                <span
+                  class="absolute -top-1 -right-3 bg-red-500 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center"
+                >
+                  1
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Search Bar (centered and fixed in navbar) -->
+        <div
+          id="search-bar"
+          class="absolute left-1/2 inset-5 transform -translate-x-1/2 -translate-y-1/2 w-full px-4 z-30 hidden"
+        >
+          <div class="flex justify-center items-center relative">
+            <!-- Search Input with Icon -->
+            <div class="relative w-1/2">
+              <input
+                id="search-bar"
+                type="text"
+                placeholder="Search..."
+                class="border border-gray-300 rounded-lg px-4 py-2 pr-10 w-full bg-white shadow-md"
+              />
+              <i
+                class="fa-solid fa-magnifying-glass absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500"
+              ></i>
+            </div>
+
+            <!-- Close Button (next to input) -->
+            <button
+              id="close-icon"
+              class="ml-3 text-gray-500 hover:text-gray-700 text-2xl"
+            >
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <hr class="border-t border-gray-300" />
+
+      <!-- Mobile Navbar -->
+      <div
+        id="mobile-menu"
+        class="fixed bg-white shadow-2xl z-50 h-screen w-full top-0 left-0 rounded-tr-3xl hidden"
+      >
+        <!-- Close Button -->
+        <div
+          class="flex items-center justify-between bg-gradient-to-r from-purple-100 to-pink-100 p-4 shadow-md"
+        >
+          <!-- Welcome Text -->
+          <span class="text-purple-700 font-semibold text-lg tracking-wide">
+            Welcome to our website!
+          </span>
+
+          <!-- Close Button -->
+          <button
+            id="menu-close"
+            class="p-2 rounded-full hover:bg-red-100 transition duration-300"
+          >
+            <i
+              class="fa-solid fa-xmark text-2xl text-gray-700 hover:text-red-500"
+            ></i>
+          </button>
+        </div>
+
+        <!-- Menu Items -->
+        <div class="p-6 space-y-6 text-lg">
+          <a
+            href="/src/index.html"
+            class="flex items-center text-gray-700 hover:text-purple-600"
+          >
+            <i class="fa-solid fa-house mr-3"></i> Home
+          </a>
+          <a
+            href="/src/pages/products.html"
+            class="flex items-center text-gray-700 hover:text-purple-600"
+          >
+            <i class="fa-solid fa-fire mr-3"></i> Frequently Bought
+          </a>
+          <a
+            href="#"
+            class="flex items-center text-gray-700 hover:text-purple-600"
+          >
+            <i class="fa-solid fa-info-circle mr-3"></i> About
+          </a>
+          <a
+            href="#"
+            class="flex items-center text-gray-700 hover:text-purple-600"
+          >
+            <i class="fa-solid fa-envelope mr-3"></i> Contact
+          </a>
+          <a
+            href="#"
+            class="flex items-center text-gray-700 hover:text-purple-600"
+          >
+            <i class="fa-solid fa-truck mr-3"></i> Track Order
+          </a>
+        </div>
+      </div>
+    </navbar>
+
+    <!-- Main Content -->
+    <main>
+      <!--products section-->
+      <section class="py-12 px-4 sm:px-6 lg:px-8 bg-white">
+        <h2 class="text-3xl font-bold text-gray-800 mb-8">Products</h2>
+
+        <div class="flex flex-wrap gap-4 mb-6">
+          <div>
+            <label for="availability" class="text-gray-700 mr-2">Filter:</label>
+            <select
+              id="availability"
+              class="border border-gray-300 rounded px-3 py-2"
+            >
+              <option value="all">Availability</option>
+              <option value="in">In Stock</option>
+              <option value="out">Out of Stock</option>
+            </select>
+          </div>
+
+          <div>
+            <select
+              id="sortPrice"
+              class="border border-gray-300 rounded px-3 py-2"
+            >
+              <option value="">Sort by price</option>
+              <option value="lowToHigh">Price: Low to High</option>
+              <option value="highToLow">Price: High to Low</option>
+            </select>
+          </div>
+        </div>
+
+        <div
+          class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
+          id="productsContainer"
+        >
+          <!-- Product Card Example -->
+        </div>
+        <div id=""></div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#5b3f40] text-white">
+      <!-- Main Footer -->
+      <div
+        class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-8"
+      >
+        <!-- Company Branding -->
+        <div>
+          <img src="/your-logo.png" alt="Logo" class="h-10 mb-4" />
+          <h2 class="text-xl font-semibold mb-2">Desi Flavors, Modern Touch</h2>
+          <div class="flex space-x-4 mt-4">
+            <a href="#"
+              ><i class="fab fa-facebook-f hover:text-gray-300"></i
+            ></a>
+            <a href="#"><i class="fab fa-instagram hover:text-gray-300"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#" class="hover:text-gray-200">Shipping Policy</a></li>
+            <li><a href="#" class="hover:text-gray-200">Refund Policy</a></li>
+            <li>
+              <a href="#" class="hover:text-gray-200">Terms of Service</a>
+            </li>
+            <li><a href="#" class="hover:text-gray-200">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Subscribe to our emails</h3>
+          <form class="flex flex-col space-y-3">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              class="px-4 py-3 rounded-md bg-white text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+            />
+            <button
+              type="submit"
+              class="bg-yellow-500 text-black px-4 py-3 rounded-md hover:bg-yellow-400 transition"
+            >
+              Subscribe →
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Sub-footer -->
+      <div
+        class="bg-[#4e3435] text-sm py-4 px-6 flex flex-col md:flex-row justify-between items-center text-gray-300"
+      >
+        <p>© 2025 Your E-Commerce. All rights reserved.</p>
+        <p>
+          Made with ❤️ by
+          <a href="#" class="underline hover:text-white">Codefaster Company</a>
+        </p>
+      </div>
+    </footer>
+
+    <!--products listing js-->
+    <script src="/src/assets/js/products_listing.js"></script>
+
+    <!-- Sort logic (must come after products are loaded) -->
+    <script src="/src/assets/js/sort.js"></script>
+
+    <!--view.js to show click product-->
+    <script src="/src/assets/js/view.js"></script>
+
+    <!--common js code-->
+    <script src="/src/assets/js/common.js"></script>
+  </body>
+</html>

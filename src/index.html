@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--tailwind css link-->
+    <link href="./assets/css/output.css" rel="stylesheet" />
+
+    <!--font awesome icon CDN-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!--navbar-->
+    <navbar>
+      <!--mini salider navbar-->
+      <div
+        class="h-10 bg-gradient-to-r from-purple-500 to-pink-500 flex items-center overflow-hidden"
+      >
+        <div
+          class="whitespace-nowrap animate-scroll text-white text-lg font-bold"
+        >
+          <span class="mx-4">Welcome to our website!</span>
+          <span class="mx-4">Authentic Taste</span>
+          <span class="mx-4">Free Delivery</span>
+          <span class="mx-4">COD Available</span>
+          <span class="mx-4">Welcome to our website!</span>
+          <span class="mx-4">Authentic Taste</span>
+          <span class="mx-4">Free Delivery</span>
+          <span class="mx-4">COD Available</span>
+          <span class="mx-4">Welcome to our website!</span>
+          <span class="mx-4">Authentic Taste</span>
+          <span class="mx-4">Free Delivery</span>
+          <span class="mx-4">COD Available</span>
+          <span class="mx-4">Welcome to our website!</span>
+          <span class="mx-4">Authentic Taste</span>
+          <span class="mx-4">Free Delivery</span>
+          <span class="mx-4">COD Available</span>
+          <span class="mx-4">Welcome to our website!</span>
+          <span class="mx-4">Authentic Taste</span>
+          <span class="mx-4">Free Delivery</span>
+          <span class="mx-4">COD Available</span>
+        </div>
+      </div>
+
+      <!--top mini salider styles-->
+      <style>
+        @keyframes scroll {
+          0% {
+            transform: translateX(100%);
+          }
+          100% {
+            transform: translateX(-100%);
+          }
+        }
+        .animate-scroll {
+          display: inline-block;
+          animation: scroll 50s linear infinite;
+        }
+      </style>
+
+      <!-- Main Desktop Navbar -->
+      <div class="bg-white shadow-md relative z-50">
+        <div
+          class="container mx-auto flex justify-between items-center px-4 h-15 py-4 relative"
+        >
+          <!--when user click search bar hidden this div-->
+          <div
+            id="nav-items"
+            class="container mx-auto flex justify-between items-center px-4 h-15 py-4 relative"
+          >
+            <!-- Navbar Items -->
+            <div class="hidden md:flex space-x-4">
+              <a
+                href="/src/index.html"
+                class="text-gray-700 hover:text-gray-900"
+                >Home</a
+              >
+              <a
+                href="/src/pages/products.html"
+                class="text-gray-700 hover:text-gray-900"
+                >Frequently bought</a
+              >
+              <a href="#" class="text-gray-700 hover:text-gray-900">About</a>
+              <a href="#" class="text-gray-700 hover:text-gray-900">Contact</a>
+              <a href="#" class="text-gray-700 hover:text-gray-900"
+                >Track your order</a
+              >
+            </div>
+
+            <!-- Mobile Toggle Button -->
+            <div class="md:hidden">
+              <!-- Menu Toggle Button -->
+              <button id="menu-toggle" class="text-gray-700 focus:outline-none">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16m-7 6h7"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            <!-- Logo -->
+            <div
+              class="absolute left-1/2 transform -translate-x-1/2 flex items-center"
+            >
+              <img
+                src="./assets/img/download.png"
+                alt="Logo"
+                class="h-14 w-14 mr-2"
+              />
+            </div>
+
+            <!-- Cart and Search Icon -->
+            <div class="flex items-center text-xl space-x-4">
+              <button
+                id="search-icon"
+                class="text-gray-700 hover:text-gray-900"
+              >
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+
+              <!--shoping bag -->
+              <a
+                href="/src/pages/cart.html"
+                class="relative text-gray-700 hover:text-gray-900"
+              >
+                <i class="fa-solid fa-bag-shopping text-xl"></i>
+
+                <!-- Shopping count badge -->
+                <span
+                  class="absolute -top-1 -right-3 bg-red-500 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center"
+                >
+                  1
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Search Bar (centered and fixed in navbar) -->
+        <div
+          id="search-bar"
+          class="absolute left-1/2 inset-5 transform -translate-x-1/2 -translate-y-1/2 w-full px-4 z-30 hidden"
+        >
+          <div class="flex justify-center items-center relative">
+            <!-- Search Input with Icon -->
+            <div class="relative w-1/2">
+              <input
+                id="search-bar"
+                type="text"
+                placeholder="Search..."
+                class="border border-gray-300 rounded-lg px-4 py-2 pr-10 w-full bg-white shadow-md"
+              />
+              <i
+                class="fa-solid fa-magnifying-glass absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500"
+              ></i>
+            </div>
+
+            <!-- Close Button (next to input) -->
+            <button
+              id="close-icon"
+              class="ml-3 text-gray-500 hover:text-gray-700 text-2xl"
+            >
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <hr class="border-t border-gray-300" />
+
+      <!-- Mobile Navbar -->
+      <div
+        id="mobile-menu"
+        class="fixed bg-white shadow-2xl z-50 h-screen w-full top-0 left-0 rounded-tr-3xl hidden lg:hidden"
+      >
+        <!-- Close Button -->
+        <div
+          class="flex items-center justify-between bg-gradient-to-r from-purple-100 to-pink-100 p-4 shadow-md"
+        >
+          <!-- Welcome Text -->
+          <span class="text-purple-700 font-semibold text-lg tracking-wide">
+            Welcome to our website!
+          </span>
+
+          <!-- Close Button -->
+          <button
+            id="menu-close"
+            class="p-2 rounded-full hover:bg-red-100 transition duration-300"
+          >
+            <i
+              class="fa-solid fa-xmark text-2xl text-gray-700 hover:text-red-500"
+            ></i>
+          </button>
+        </div>
+
+        <!-- Menu Items -->
+        <div class="p-6 space-y-6 text-lg">
+          <a
+            href="/src/index.html"
+            class="flex items-center text-gray-700 hover:text-purple-600"
+          >
+            <i class="fa-solid fa-house mr-3"></i> Home
+          </a>
+          <a
+            href="/src/pages/products.html"
+            class="flex items-center text-gray-700 hover:text-purple-600"
+          >
+            <i class="fa-solid fa-fire mr-3"></i> Frequently Bought
+          </a>
+          <a
+            href="#"
+            class="flex items-center text-gray-700 hover:text-purple-600"
+          >
+            <i class="fa-solid fa-info-circle mr-3"></i> About
+          </a>
+          <a
+            href="#"
+            class="flex items-center text-gray-700 hover:text-purple-600"
+          >
+            <i class="fa-solid fa-envelope mr-3"></i> Contact
+          </a>
+          <a
+            href="#"
+            class="flex items-center text-gray-700 hover:text-purple-600"
+          >
+            <i class="fa-solid fa-truck mr-3"></i> Track Order
+          </a>
+        </div>
+      </div>
+    </navbar>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Hero Section -->
+      <div class="w-full">
+        <img
+          src="/src/assets/img/download.jpeg"
+          alt="Hero"
+          class="w-full h-auto md:h-[500px] object-cover"
+        />
+      </div>
+
+      <!--products section-->
+      <section class="px-6 py-10">
+        <h2 class="text-2xl text-left font-bold text-gray-800 mb-6">
+          Taste The Tradition
+        </h2>
+
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"
+          id="products-listing"
+        >
+          <!-- Product Card -->
+        </div>
+      </section>
+
+      <!--how we are makwe this mango pikle achar-->
+      <section class="bg-white py-10 px-6">
+        <div class="max-w-6xl mx-auto">
+          <div
+            class="grid grid-cols-2 md:grid-cols-3 gap-y-12 text-center text-[#4B2E2E]"
+          >
+            <!-- Feature 1 -->
+            <div class="flex flex-col items-center space-y-2">
+              <i class="fa-solid fa-award text-3xl"></i>
+              <span class="font-medium">Finest Quality</span>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="flex flex-col items-center space-y-2">
+              <i class="fa-solid fa-face-smile text-3xl"></i>
+              <span class="font-medium">Authentic Taste</span>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="flex flex-col items-center space-y-2">
+              <i class="fa-solid fa-house-heart text-3xl"></i>
+              <span class="font-medium">Home Made</span>
+            </div>
+
+            <!-- Feature 4 -->
+            <div class="flex flex-col items-center space-y-2">
+              <i class="fa-solid fa-vial-virus text-3xl"></i>
+              <span class="font-medium">No Preservative</span>
+            </div>
+
+            <!-- Feature 5 -->
+            <div class="flex flex-col items-center space-y-2">
+              <i class="fa-solid fa-oil-can text-3xl"></i>
+              <span class="font-medium">No Palm Oil</span>
+            </div>
+
+            <!-- Feature 6 -->
+            <div class="flex flex-col items-center space-y-2">
+              <i class="fa-solid fa-heart text-3xl"></i>
+              <span class="font-medium">Made With Love</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonial Section -->
+      <section class="px-6 py-10">
+        <h2 class="text-2xl font-bold text-[#503232] mb-6">
+          Exclusive Event Highlights
+        </h2>
+
+        <!-- Horizontal scroll container -->
+        <div class="flex gap-4 overflow-x-auto no-scrollbar pb-4">
+          <!-- Testimonial video card -->
+          <div
+            class="flex-shrink-0 w-64 bg-white rounded-xl shadow-md overflow-hidden"
+          >
+            <video
+              autoplay
+              muted
+              loop
+              playsinline
+              class="w-full h-[420px] object-cover rounded-xl"
+            >
+              <source
+                src="/src/assets/video/videoplayback.mp4"
+                type="video/mp4"
+              />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+
+          <!-- Repeat cards -->
+          <div
+            class="flex-shrink-0 w-64 bg-white rounded-xl shadow-md overflow-hidden"
+          >
+            <video
+              autoplay
+              muted
+              loop
+              playsinline
+              class="w-full h-[420px] object-cover rounded-xl"
+            >
+              <source
+                src="/src/assets/video/videoplayback.mp4"
+                type="video/mp4"
+              />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+
+          <div
+            class="flex-shrink-0 w-64 bg-white rounded-xl shadow-md overflow-hidden"
+          >
+            <video
+              autoplay
+              muted
+              loop
+              playsinline
+              class="w-full h-[420px] object-cover rounded-xl"
+            >
+              <source
+                src="/src/assets/video/videoplayback.mp4"
+                type="video/mp4"
+              />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+
+          <div
+            class="flex-shrink-0 w-64 bg-white rounded-xl shadow-md overflow-hidden"
+          >
+            <video
+              autoplay
+              muted
+              loop
+              playsinline
+              class="w-full h-[420px] object-cover rounded-xl"
+            >
+              <source
+                src="/src/assets/video/videoplayback.mp4"
+                type="video/mp4"
+              />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      </section>
+
+      <!--we are Available in some website-->
+      <section class="px-6 py-10 bg-white">
+        <h2 class="text-2xl font-bold text-[#503232] mb-8">
+          We are also available on
+        </h2>
+
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto"
+        >
+          <!-- Amazon Card -->
+          <div
+            class="bg-[#f9f9f9] rounded-lg p-6 flex flex-col items-center justify-between shadow-md"
+          >
+            <img
+              src="/src/assets/img/download (2).png"
+              alt="Amazon"
+              class="h-20 mb-4"
+            />
+            <a
+              href="#"
+              class="text-sm font-medium text-black hover:underline flex items-center gap-1"
+            >
+              visit page <span>→</span>
+            </a>
+          </div>
+
+          <!-- Flipkart Card -->
+          <div
+            class="bg-[#f9f9f9] rounded-lg p-6 flex flex-col items-center justify-between shadow-md"
+          >
+            <img
+              src="/src/assets/img/download (1).png"
+              alt="Flipkart"
+              class="h-20 mb-4"
+            />
+            <a
+              href="#"
+              class="text-sm font-medium text-black hover:underline flex items-center gap-1"
+            >
+              visit page <span>→</span>
+            </a>
+          </div>
+
+          <!-- Meesho Card -->
+          <div
+            class="bg-[#f9f9f9] rounded-lg p-6 flex flex-col items-center justify-between shadow-md"
+          >
+            <img
+              src="/src/assets/images/meesho.png"
+              alt="Meesho"
+              class="h-20 mb-4 rounded-xl"
+            />
+            <a
+              href="#"
+              class="text-sm font-medium text-black hover:underline flex items-center gap-1"
+            >
+              visit page <span>→</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#5b3f40] text-white">
+      <!-- Main Footer -->
+      <div
+        class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-8"
+      >
+        <!-- Company Branding -->
+        <div>
+          <img src="/your-logo.png" alt="Logo" class="h-10 mb-4" />
+          <h2 class="text-xl font-semibold mb-2">Desi Flavors, Modern Touch</h2>
+          <div class="flex space-x-4 mt-4">
+            <a href="#"
+              ><i class="fab fa-facebook-f hover:text-gray-300"></i
+            ></a>
+            <a href="#"><i class="fab fa-instagram hover:text-gray-300"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#" class="hover:text-gray-200">Shipping Policy</a></li>
+            <li><a href="#" class="hover:text-gray-200">Refund Policy</a></li>
+            <li>
+              <a href="#" class="hover:text-gray-200">Terms of Service</a>
+            </li>
+            <li><a href="#" class="hover:text-gray-200">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Subscribe to our emails</h3>
+          <form class="flex flex-col space-y-3">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              class="px-4 py-3 rounded-md bg-white text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+            />
+            <button
+              type="submit"
+              class="bg-yellow-500 text-black px-4 py-3 rounded-md hover:bg-yellow-400 transition"
+            >
+              Subscribe →
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Sub-footer -->
+      <div
+        class="bg-[#4e3435] text-sm py-4 px-6 flex flex-col md:flex-row justify-between items-center text-gray-300"
+      >
+        <p>© 2025 Your E-Commerce. All rights reserved.</p>
+        <p>
+          Made with ❤️ by
+          <a href="#" class="underline hover:text-white">Codefaster Company</a>
+        </p>
+      </div>
+    </footer>
+
+    <!--common js code-->
+    <script src="/src/assets/js/common.js"></script>
+
+    <!--productslisting-->
+    <script src="/src/assets/js/products_listing.js"></script>
+  </body>
+</html>
