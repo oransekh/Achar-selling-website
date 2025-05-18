@@ -137,9 +137,10 @@
 
                 <!-- Shopping count badge -->
                 <span
+                  id="cart-count"
                   class="absolute -top-1 -right-3 bg-red-500 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center"
                 >
-                  1
+                  0
                 </span>
               </a>
             </div>
@@ -155,7 +156,7 @@
             <!-- Search Input with Icon -->
             <div class="relative w-1/2">
               <input
-                id="search-bar"
+                id="search-input"
                 type="text"
                 placeholder="Search..."
                 class="border border-gray-300 rounded-lg px-4 py-2 pr-10 w-full bg-white shadow-md"
@@ -269,6 +270,12 @@
           </div>
         </div>
 
+        <!--search products-->
+        <div
+          id="product-list"
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"
+        ></div>
+
         <div
           class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
           id="productsContainer"
@@ -344,11 +351,11 @@
     <!--products listing js-->
     <script src="/src/assets/js/products_listing.js"></script>
 
-    <!-- Sort logic (must come after products are loaded) -->
-    <script src="/src/assets/js/sort.js"></script>
-
     <!--view.js to show click product-->
     <script src="/src/assets/js/view.js"></script>
+
+    <!-- Sort logic (must come after products are loaded) -->
+    <script src="/src/assets/js/sort.js"></script>
 
     <!--common js code-->
     <script src="/src/assets/js/common.js"></script>

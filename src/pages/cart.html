@@ -78,7 +78,9 @@
                 class="text-gray-700 hover:text-gray-900"
                 >Home</a
               >
-              <a href="/src/pages/products.html" class="text-gray-700 hover:text-gray-900"
+              <a
+                href="/src/pages/products.html"
+                class="text-gray-700 hover:text-gray-900"
                 >Frequently bought</a
               >
               <a href="" class="text-gray-700 hover:text-gray-900">About</a>
@@ -135,9 +137,10 @@
 
                 <!-- Shopping count badge -->
                 <span
+                  id="cart-count"
                   class="absolute -top-1 -right-3 bg-red-500 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center"
                 >
-                  1
+                  0
                 </span>
               </a>
             </div>
@@ -239,56 +242,19 @@
     <!-- Main Content -->
     <main>
       <section>
-        <div class="mx-auto px-4 py-8">
+        <div class="mx-auto px-4 py-8 max-w-4xl">
           <!-- Offer Banner -->
           <div
+            id="offer-banner"
             class="bg-yellow-100 text-yellow-800 text-sm font-semibold text-center py-2 rounded-md mb-6 shadow"
           >
             You're only <span class="font-bold">1 item away</span> from
             <span class="text-green-600 font-bold">5% OFF</span>
           </div>
 
-          <!-- Cart Item Row -->
-          <div class="grid grid-cols-12 items-center gap-4 border-b pb-6">
-            <!-- Product Image -->
-            <div class="col-span-2">
-              <img
-                src="https://example.com/thekua.jpg"
-                alt="Thekua"
-                class="rounded-xl w-full shadow-md"
-              />
-            </div>
-
-            <!-- Product Info -->
-            <div class="col-span-5">
-              <h3 class="text-lg font-semibold text-gray-800">
-                Sooji & Coconut Desi Ghee Thekua 250g
-              </h3>
-              <p class="text-gray-500">Rs. 280.00</p>
-            </div>
-
-            <!-- Quantity Controls -->
-            <div class="col-span-3 flex items-center justify-center space-x-3">
-              <button
-                class="px-3 py-1 border border-gray-300 rounded hover:bg-gray-100"
-              >
-                -
-              </button>
-              <span class="text-lg font-medium">1</span>
-              <button
-                class="px-3 py-1 border border-gray-300 rounded hover:bg-gray-100"
-              >
-                +
-              </button>
-              <button class="text-red-500 hover:text-red-700">
-                <i class="fa-solid fa-trash"></i>
-              </button>
-            </div>
-
-            <!-- Price -->
-            <div class="col-span-2 text-right font-semibold text-gray-800">
-              Rs. 280.00
-            </div>
+          <!-- Cart Items -->
+          <div id="cart-items-list" class="space-y-4">
+            <!-- JS will populate this section with items -->
           </div>
 
           <!-- Order Note -->
@@ -311,7 +277,9 @@
             <div>
               <p class="text-lg font-semibold">
                 Estimated total
-                <span class="ml-2 text-purple-700">Rs. 280.00</span>
+                <span id="cart-total" class="ml-2 text-purple-700"
+                  >Rs. 0.00</span
+                >
               </p>
               <p class="text-sm text-gray-500 mt-1">
                 Taxes included. Discounts and
@@ -331,6 +299,8 @@
       </section>
     </main>
 
+    <!--productslisting-->
+    <script src="/src/assets/js/products_listing.js"></script>
     <!-- Footer -->
     <footer class="bg-[#5b3f40] text-white">
       <!-- Main Footer -->
@@ -392,6 +362,10 @@
         </p>
       </div>
     </footer>
+
+    <!--cart.js-->
+    <script src="/src/assets/js/cart.js"></script>
+
     <!--common js code-->
     <script src="/src/assets/js/common.js"></script>
   </body>

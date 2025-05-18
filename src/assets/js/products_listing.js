@@ -63,3 +63,30 @@ products.forEach((product, index) => {
     </a>
   `;
 });
+
+// ================
+// Add to Cart
+// ================
+function addToCart(index) {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const productToAdd = { ...products[index], quantity: 1 };
+  cart.push(productToAdd);
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateCartCount();
+}
+
+// ================
+// Update Cart Count on Icon
+// ================
+function updateCartCount() {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const cartCount = cart.length;
+  const cartCountEl = document.getElementById("cart-count");
+
+  if (cartCountEl) {
+    cartCountEl.textContent = cartCount;
+    cartCountEl.style.display = cartCount > 0 ? "flex" : "none";
+  }
+}
+
+document.addEventListener("DOMContentLoaded", updateCartCount);

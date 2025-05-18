@@ -1,5 +1,5 @@
 // ============================== //
-// Same Products to Show on the Buying Page
+// Products to Show on the Buying Page
 // ============================== //
 
 const products = [
@@ -32,26 +32,26 @@ const products = [
   },
 ];
 
-// Get index from URL
+// STEP 1: Get the index from the URL
 const queryParams = new URLSearchParams(window.location.search);
 const productIndex = parseInt(queryParams.get("index"));
 
+// STEP 2: Get container where you will show product
 const productContainer = document.getElementById("product-detail");
 
-// Check if product exists
+// STEP 3: Check if product exists and render it
 if (products[productIndex]) {
   const product = products[productIndex];
 
   productContainer.innerHTML = `
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       <!-- Product Image -->
-     <div>
-       <img
-       src="${product.img}"
-       alt="${product.name}"
-       class="w-full max-h-[400px] object-cover rounded-xl shadow-md"/>
-       </div>
-
+      <div>
+        <img
+          src="${product.img}"
+          alt="${product.name}"
+          class="w-full max-h-[400px] object-cover rounded-xl shadow-md"/>
+      </div>
 
       <!-- Product Info -->
       <div class="flex flex-col justify-center">
@@ -65,9 +65,9 @@ if (products[productIndex]) {
           <span class="text-xl font-bold text-gray-800">Rs.${
             product.offerPrice
           }</span>
-          <span
-            class="bg-yellow-400 text-black text-sm font-semibold px-2 py-1 rounded"
-          >${product.discount}</span>
+          <span class="bg-yellow-400 text-black text-sm font-semibold px-2 py-1 rounded">${
+            product.discount
+          }</span>
         </div>
         <p class="text-sm text-gray-500 mt-2">
           Taxes included. <span class="underline">Shipping</span> calculated at checkout.
@@ -83,10 +83,10 @@ if (products[productIndex]) {
             product.reviews
           } reviews</span>
         </div>
-
+        
         <!-- Buttons -->
         <div class="mt-4 flex flex-col gap-3">
-          <button class="w-full border border-gray-400 text-gray-700 py-2 px-4 rounded hover:bg-gray-100">
+          <button onclick="addToCart(${productIndex})" class="w-full border border-gray-400 text-gray-700 py-2 px-4 rounded hover:bg-gray-100">
             Add to cart
           </button>
           <button class="w-full bg-black text-white py-2 px-4 rounded flex justify-center items-center gap-2">
@@ -100,7 +100,6 @@ if (products[productIndex]) {
     </div>
   `;
 } else {
-  // Handle invalid index or no product
   productContainer.innerHTML = `
     <div class="text-center py-10">
       <h2 class="text-2xl text-red-500 font-semibold">Product not found</h2>
@@ -108,3 +107,47 @@ if (products[productIndex]) {
     </div>
   `;
 }
+
+// ================
+// Add to Cart
+// ================
+function addToCart(index) {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  // Get the product
+  const product = products[index];
+
+  // Check if product already in cart
+  const existingItem = cart.find((item) => item.name === product.name);
+
+  if (existingItem) {
+    // Increase quantity
+    existingItem.quantity += 1;
+  } else {
+    // Add new product with quantity 1
+    cart.push({ ...product, quantity: 1 });
+  }
+
+  // Save and update UI
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateCartCount();
+}
+
+// ================
+// Update Cart Count on Icon
+// ================
+function updateCartCount() {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const cartCount = cart.length;
+  const cartCountEl = document.getElementById("cart-count");
+
+  if (cartCountEl) {
+    cartCountEl.textContent = cartCount;
+    cartCountEl.style.display = cartCount > 0 ? "flex" : "none";
+  }
+}
+
+// ================
+// Run on All Pages
+// ================
+document.addEventListener("DOMContentLoaded", updateCartCount);

@@ -132,14 +132,18 @@
               </button>
 
               <!--shoping bag -->
-              <a href="/src/pages/cart.html" class="relative text-gray-700 hover:text-gray-900">
+              <a
+                href="/src/pages/cart.html"
+                class="relative text-gray-700 hover:text-gray-900"
+              >
                 <i class="fa-solid fa-bag-shopping text-xl"></i>
 
                 <!-- Shopping count badge -->
                 <span
                   class="absolute -top-1 -right-3 bg-red-500 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center"
+                  id="cart-count"
                 >
-                  1
+                  0
                 </span>
               </a>
             </div>
@@ -240,7 +244,6 @@
 
     <!-- Main Content -->
     <main>
-
       <!--products view section-->
       <section class="max-w-7xl mx-auto px-4 py-8">
         <!--to show only products details-->
@@ -280,7 +283,6 @@
           </div>
         </div> -->
       </section>
-
     </main>
 
     <!-- Footer -->
@@ -350,6 +352,9 @@
 
     <!--view.js to show click product-->
     <script src="/src/assets/js/view.js"></script>
+
+    <!--cart products listing-->
+    <script src="/src/assets/js/cart.js"></script>
 
     <!--products listing js-->
     <script src="/src/assets/js/products_listing.js"></script>
